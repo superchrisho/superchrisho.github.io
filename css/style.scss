@@ -71,36 +71,24 @@ header {
 
 .hamburger {
   display: flex;
+  flex-direction: column;
   position: relative;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  height: 7rem;
-  width: 6rem;
+  height: 5rem;
+  width: 5rem;
   transition: ease-in-out all 0.5s;
-  margin: 1rem;
   z-index: 100;
   cursor: pointer;
   .line {
-    $line-height: 0.6rem;
-    position: absolute;
-    left: 0;
+    // $line-height: 0.6rem;
+    // position: absolute;
+    // left: 0;
     background: $color1;
     width: 4.4rem;
-    height: $line-height;
-    border-radius: $line-height / 2;
+    height: 0.5rem;
+    border-radius: 0.25rem;
     transition: ease-in-out 0.5s all;
-  }
-  .line1 {
-    top: 25%;
-    transform: translateY(-25%);
-  }
-  .line2 {
-    width: 3rem;
-  }
-  .line3 {
-    top: 75%;
-    transform: translateY(-75%);
-    width: 2rem;
   }
 }
 
@@ -125,6 +113,6 @@ header {
   }
 }
 
-.hide{
+.hide {
   display: none;
 }
