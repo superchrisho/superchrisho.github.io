@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap");
+
+// mobile first, media queries will condition with min-width
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$color1: #6d4abd;
+
+html {
+  max-width: 3840px;
+  font-size: 62.5%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100%;
+  font-family: "Nunito", sans-serif;
+}
+
+header {
+  $header-height: 7rem;
+  height: $header-height;
+  nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo-container {
+      height: 100%;
+      padding: 0.5rem;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .hamburger {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      height: $header-height;
+      width: $header-height;
+      transition: ease-in-out all 0.5s;
+      margin: 1rem;
+      z-index: 100;
+      cursor: pointer;
+      .line {
+        $line-height: 0.6rem;
+        position: absolute;
+        left: 0;
+        background: $color1;
+        width: 4.4rem;
+        height: $line-height;
+        border-radius: $line-height / 2;
+        transition: ease-in-out 0.5s all;
+      }
+      .line1 {
+        top: 25%;
+        transform: translateY(-25%);
+      }
+      .line2 {
+        width: 3rem;
+      }
+      .line3 {
+        top: 75%;
+        transform: translateY(-75%);
+        width: 2rem;
+      }
+    }
+    ul {
+      position: fixed;
+      top: 0;
+      display: flex;
+      // display: none; //temp
+      // justify-content: space-evenly;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+      background: lightskyblue;
+
+      li {
+        list-style: none;
+        // background: lightcoral;
+        transition: all 1s ease-in-out;
+        margin: auto;
+        a {
+          text-decoration: none;
+          font-size: 3rem;
+          color: $color1;
+        }
+      }
+    }
+    .active {
+      transition: ease-in-out 0.5s all;
+      div.line {
+        transition: ease-in-out 0.5s all;
+        left: 100%;
+      }
+      .line1 {
+        transform: translate(-100% -25%);
+        animation: anime-line1 0.5s;
+      }
+      .line2 {
+        transform: translate(-100% -50%);
+      }
+      .line3 {
+        transform: translate(-100% -75%);
+      }
+    }
+  }
+}
+
+@keyframes anime-line1 {
+  0% {
+    width: 4.4rem;
+    transform-origin: center right;
+  }
+  100% {
+  }
+}

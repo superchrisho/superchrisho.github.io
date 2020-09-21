@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap");
 
+// mobile first, media queries will condition with min-width
+
 * {
   margin: 0;
   padding: 0;
@@ -9,43 +11,120 @@
 $color1: #6d4abd;
 
 html {
+  max-width: 3840px;
   font-size: 62.5%;
   height: 100%;
+  margin: 0 auto;
 }
 
 body {
   font-size: 1.6rem;
   height: 100%;
   font-family: "Nunito", sans-serif;
+  background-color: black;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto 5rem;
-  height: 10rem;
-
-  .logo-container {
-    height: 80%;
-    img {
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  ul {
+  $header-height: 7rem;
+  height: $header-height;
+  nav {
+    height: 100%;
     display: flex;
-    justify-content: space-evenly;
-    width: 40%;
-
-    li {
-      list-style: none;
-
-      a {
-        text-decoration: none;
-        font-size: 3rem;
-        color: $color1;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+    ul {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 7rem;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      li {
+        list-style: none;
+        background-color: lightskyblue;
+        height: 10rem;
+        width: 100%;
+        text-align: center;
+        display: grid;
+        place-items: center;
+        a {
+          text-decoration: none;
+          font-size: 3rem;
+          color: $color1;
+        }
       }
     }
   }
+}
+
+.logo-container {
+  height: 90%;
+  padding: 0.5rem;
+  img {
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+}
+
+.hamburger {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 7rem;
+  width: 6rem;
+  transition: ease-in-out all 0.5s;
+  margin: 1rem;
+  z-index: 100;
+  cursor: pointer;
+  .line {
+    $line-height: 0.6rem;
+    position: absolute;
+    left: 0;
+    background: $color1;
+    width: 4.4rem;
+    height: $line-height;
+    border-radius: $line-height / 2;
+    transition: ease-in-out 0.5s all;
+  }
+  .line1 {
+    top: 25%;
+    transform: translateY(-25%);
+  }
+  .line2 {
+    width: 3rem;
+  }
+  .line3 {
+    top: 75%;
+    transform: translateY(-75%);
+    width: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  header {
+    nav {
+      ul {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        height: auto;
+        width: 50%;
+        li {
+          height: auto;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.hide{
+  display: none;
 }

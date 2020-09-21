@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  max-width: 3840px;
+  font-size: 62.5%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100%;
+  font-family: "Nunito", sans-serif;
+}
+
+header {
+  height: 7rem;
+}
+
+header nav {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav .logo-container {
+  height: 100%;
+  padding: 0.5rem;
+}
+
+header nav .logo-container img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+header nav .hamburger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 7rem;
+  width: 7rem;
+  -webkit-transition: ease-in-out all 0.5s;
+  transition: ease-in-out all 0.5s;
+  margin: 1rem;
+  z-index: 100;
+  cursor: pointer;
+}
+
+header nav .hamburger .line {
+  position: absolute;
+  left: 0;
+  background: #6d4abd;
+  width: 4.4rem;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+  -webkit-transition: ease-in-out 0.5s all;
+  transition: ease-in-out 0.5s all;
+}
+
+header nav .hamburger .line1 {
+  top: 25%;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
+}
+
+header nav .hamburger .line2 {
+  width: 3rem;
+}
+
+header nav .hamburger .line3 {
+  top: 75%;
+  -webkit-transform: translateY(-75%);
+          transform: translateY(-75%);
+  width: 2rem;
+}
+
+header nav ul {
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background: lightskyblue;
+}
+
+header nav ul li {
+  list-style: none;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  margin: auto;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-size: 3rem;
+  color: #6d4abd;
+}
+
+header nav .active {
+  -webkit-transition: ease-in-out 0.5s all;
+  transition: ease-in-out 0.5s all;
+}
+
+header nav .active div.line {
+  -webkit-transition: ease-in-out 0.5s all;
+  transition: ease-in-out 0.5s all;
+  left: 100%;
+}
+
+header nav .active .line1 {
+  -webkit-transform: translate(-100% -25%);
+          transform: translate(-100% -25%);
+  -webkit-animation: anime-line1 0.5s;
+          animation: anime-line1 0.5s;
+}
+
+header nav .active .line2 {
+  -webkit-transform: translate(-100% -50%);
+          transform: translate(-100% -50%);
+}
+
+header nav .active .line3 {
+  -webkit-transform: translate(-100% -75%);
+          transform: translate(-100% -75%);
+}
+
+@-webkit-keyframes anime-line1 {
+  0% {
+    width: 4.4rem;
+    -webkit-transform-origin: center right;
+            transform-origin: center right;
+  }
+  100% {
+  }
+}
+
+@keyframes anime-line1 {
+  0% {
+    width: 4.4rem;
+    -webkit-transform-origin: center right;
+            transform-origin: center right;
+  }
+  100% {
+  }
+}
+/*# sourceMappingURL=style_DESKTOP-KEKO5E1_Sep-19-211823-2020_Conflict.css.map */
