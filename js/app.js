@@ -28,7 +28,8 @@ const animation = () => {
           backgroundColor: "#d15252",
         },
         "<"
-      )
+    )
+      
       .from(
         ".links",
         {
