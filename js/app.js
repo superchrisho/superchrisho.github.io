@@ -1,61 +1,53 @@
 const toggle = document.querySelector(".hamburger");
-const links = document.querySelector(".navbar-links");
-const tl = gsap.timeline();
+const ul = document.querySelector(".navbar-links");
 
-tl.pause();
-tl.from(".links", {
-  opacity: 0,
-  x: "200%",
-  stagger: 0.2,
-})
-  .to(
-    ".line1",
-    {
+// prevents timeline from playing on load
+const tl = gsap.timeline().paused(true);
+let animationActive = false;
+
+const animation = () => {
+  if (!animationActive) {
+    ul.style.display = "flex";
+    tl.to(".line1", {
       top: "50%",
-      y: "-50%",
-      width: "0%",
-      duration: 0.2,
-    },
-    "<"
-  )
-  .to(
-    ".line2",
-    {
-      width: "0%",
-      duration: 0.2,
-    },
-    "<"
-  )
-  .to(
-    ".line3",
-    {
-      top: "50%",
-      y: "-50%",
-      width: "0%",
-      duration: 0.2,
-    },
-    "<"
-  )
-  .to(".line1", {
-    width: "100%",
-    rotate: "45deg",
-    duration: 0.2,
-    backgroundColor: "lightcoral",
-  })
-  .to(
-    ".line3",
-    {
-      width: "100%",
-      rotate: "-45deg",
-      duration: 0.2,
-      backgroundColor: "lightcoral",
-    },
-    "<"
-  )
-  .reverse();
+      rotate: "45deg",
+      backgroundColor: "#d15252",
+    })
+      .to(
+        ".line2",
+        {
+          width: "0%",
+        },
+        "<"
+      )
+      .to(
+        ".line3",
+        {
+          top: "50%",
+          rotate: "-45deg",
+          backgroundColor: "#d15252",
+        },
+        "<"
+      )
+      .from(
+        ".links",
+        {
+          x: "100%",
+          opacity: 0,
+          stagger: 0.2,
+          ease: "back.inOut",
+        },
+        "<"
+      )
+      .play();
+    animationActive = !animationActive;
+  } else {
+    tl.reversed() ? tl.play() : tl.reverse();
+  }
+};
 
 toggle.addEventListener("click", () => {
-  console.log(`Played animation`);
-  tl.resume();
-  tl.reversed() ? tl.play() : tl.reverse();
+  console.log(`Hamburger clicked`);
+  animation();
+  // tl.reversed() ? tl.play() : tl.reverse();
 });
