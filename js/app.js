@@ -12,7 +12,7 @@ const animation = () => {
       top: "50%",
       rotate: "45deg",
       backgroundColor: "#d15252",
-    })
+    },"<")
       .to(
         ".line2",
         {
@@ -28,8 +28,8 @@ const animation = () => {
           backgroundColor: "#d15252",
         },
         "<"
-    )
-      
+      )
+
       .from(
         ".links",
         {
@@ -50,5 +50,4 @@ const animation = () => {
 toggle.addEventListener("click", () => {
   console.log(`Hamburger clicked`);
   animation();
-  // tl.reversed() ? tl.play() : tl.reverse();
 });
